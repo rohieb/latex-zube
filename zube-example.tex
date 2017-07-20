@@ -1,0 +1,59 @@
+%% Examples for the zube package.
+%% This file is released to the public domain under CC-0,
+%% see <https://creativecommons.org/publicdomain/zero/1.0/>.
+\documentclass[twoside]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[default]{droidsans}
+\usepackage[defaultmono]{droidmono}
+\usepackage{lipsum}
+\usepackage{zube}
+
+\title{Test-Dokument für \texttt{zube}}
+\date{\today}
+\author{Niemand}
+
+\begin{document}
+\maketitle
+\lipsum[1-2]
+\newpage
+
+\zubeGeldVerein{
+	Braunschweiger Total Super Verein von 1890 e.\,V. \\
+	Hamburger Straße 210 \\
+	38112 Braunschweig
+}{
+	Gerhard Geldgeber \\
+	Unter dem Scheffel 88 \\
+	31137 Hackingen
+}{
+	%showboxes=true,
+	ausstellerLogo=TODO,
+	stNr=1331335,
+	betragInZiffern=56,
+	betragInBuchstaben={\scriptsize eintausend einhundert und sechs Euro fünfundneunzig Cent},
+	datumZuwendung=12.12.2021,
+	beguenstigteZwecke=begünstigte Zwecke,
+	finanzamt=Finanzamt,
+	stNr=Steuernr,
+	verzichtVonAufwendungen=true,
+	befreiungKStGewSt=true,
+	bkgBeguenstigteZwecke=bkgbegunstigtezwecke,
+	bkgFinanzamt=Braunschw.-Wilhelmstr.,
+	bkgStNr=stNrbk,
+	bkgDatum=10.10.2010,
+	bkgVeranlagungszeitraum=2010--2012,
+	feststellungAO=true,
+	faoBeguenstigteZwecke=Förderung von asdf und Foobar,
+	faoFinanzamt=Braunschw.--Wilhelmstr.,
+	faoStNr=stNrFao,
+	faoDatum=10.10.2012,
+	mitgliedsbeitragAbziehbar=true,
+	unterschriftOrt=Braunschweig,
+	unterschriftDatum=heute,
+	unterschriftNameA=Foo Bar,
+	unterschriftNameB=Baz Bao,
+}
+
+\newpage
+\lipsum
+\end{document}
