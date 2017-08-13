@@ -17,6 +17,9 @@ provided by the user is filled in by absolutely positioning text snippets on
 top of the template.  It is therefore suited for scripting the process of
 issuing such acknowledgements.
 
+This package is maintained on GitHub at <https://github.com/rohieb/latex-zube>.
+Issues and patches are welcome!
+
 
 Installation
 ------------
