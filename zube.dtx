@@ -109,16 +109,16 @@
 	showboxes,
 }{}
 % Abschnitt Befreiung von Körperschafts- und Gewerbesteuer
-\define@cmdkeys{zube}[zube@]{bkgBeguenstigteZwecke  }[\zube@beguenstigteZwecke]
-\define@cmdkeys{zube}[zube@]{bkgFinanzamt           }[\zube@finanzamt]
-\define@cmdkeys{zube}[zube@]{bkgStNr                }[\zube@stNr]
+\define@cmdkeys{zube}[zube@]{bkgBeguenstigteZwecke  }
+\define@cmdkeys{zube}[zube@]{bkgFinanzamt           }
+\define@cmdkeys{zube}[zube@]{bkgStNr                }
 \define@cmdkeys{zube}[zube@]{bkgDatum               }
 \define@cmdkeys{zube}[zube@]{bkgVeranlagungszeitraum}
 
 % Abschnitt Feststellung der satzungsmäßigen Voraussetzungen nach § 60a AO
-\define@cmdkeys{zube}[zube@]{faoBeguenstigteZwecke  }[\zube@beguenstigteZwecke]
-\define@cmdkeys{zube}[zube@]{faoFinanzamt,          }[\zube@finanzamt]
-\define@cmdkeys{zube}[zube@]{faoStNr,               }[\zube@stNr]
+\define@cmdkeys{zube}[zube@]{faoBeguenstigteZwecke  }
+\define@cmdkeys{zube}[zube@]{faoFinanzamt,          }
+\define@cmdkeys{zube}[zube@]{faoStNr,               }
 \define@cmdkeys{zube}[zube@]{faoDatum,              }
 
 \newcommand{\zube@selectfont}{\fontsize{10pt}{11pt}\itshape\selectfont}
@@ -126,20 +126,25 @@
 \newcommand{\zubeBoxCheckmark}{{\fontsize{18pt}{18pt}\selectfont\upshape X}}
 
 \newcommand{\zubeGeldVerein}[3]{
-	%\presetkeys{zube}{
-		%verzichtVonAufwendungen=false,
-		%unterschrift
-	%}{}
-	\setkeys{zube}{aussteller={#1}}
-	\setkeys{zube}{zuwendender={#2}}
-	\setkeys{zube}{#3}
-	%\presetkeys{zube}{
-		%verzichtVonAufwendungen=false,
-		%unterschriftNameA={},
-		%unterschriftNameB={},
-		%faoFinanzamt=\usevalue{finanzamt},
-		%bkgFinanzamt=\usevalue{finanzamt},
-	%}{}
+	\savekeys{zube}{beguenstigteZwecke,finanzamt,stNr}
+	\presetkeys{zube}{
+		ausstellerLogo=,
+		unterschriftNameA=,
+		unterschriftNameB=,
+		verzichtVonAufwendungen=false,
+		befreiungKStGewSt=false,
+		feststellungAO=false,
+		mitgliedsbeitragAbziehbar=false,
+		showboxes=false,
+	}{
+		bkgBeguenstigteZwecke=\usevalue{beguenstigteZwecke},
+		bkgFinanzamt=\usevalue{finanzamt},
+		bkgStNr=\usevalue{stNr},
+		faoBeguenstigteZwecke=\usevalue{beguenstigteZwecke},
+		faoFinanzamt=\usevalue{finanzamt},
+		faoStNr=\usevalue{stNr},
+	}
+	\setkeys{zube}{aussteller={#1},zuwendender={#2},#3}
 
 	{ % push font stack
 
