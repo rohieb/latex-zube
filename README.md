@@ -63,8 +63,8 @@ distributions of LaTeX version 2005/12/01 or later.
 This work has the LPPL maintenance status “maintained”, and the Current
 Maintainer of this work is Roland Hieber.
 
-This work consists of the files `zube.dtx` and `zube.ins`, as well as the
-derived files `zube.sty` and `zube.pdf`.
+This work consists of the files README.md`, `zube.dtx` and `zube.ins`, as well
+as the derived files `zube.sty` and `zube.pdf`.
 
 The examples in `zubexmpl.tex` are licensed under CC-0 (Public Domain), see
 <https://creativecommons.org/publicdomain/zero/1.0/>.
