@@ -84,6 +84,7 @@
 \RequirePackage{pdfpages}
 \RequirePackage[absolute]{textpos}
 \RequirePackage{xcolor}
+\RequirePackage{bbding} % for checkmarks etc.
 
 \RequirePackage{xkeyval}
 \define@cmdkeys{zube}[zube@]{
@@ -123,7 +124,7 @@
 
 \newcommand{\zube@selectfont}{\usefont{T1}{ptm}{m}{it}\fontsize{11pt}{12pt}\selectfont}
 
-\newcommand{\zubeBoxCheckmark}{{\fontsize{18pt}{18pt}\selectfont\upshape X}}
+\newcommand{\zubeBoxCheckmark}{\XSolid}
 
 \newcommand{\zubeGeldVerein}[3]{
 	\savekeys{zube}{beguenstigteZwecke,finanzamt,stNr}
@@ -185,17 +186,17 @@
 	\end{textblock}
 
 	\ifzube@verzichtVonAufwendungen
-		\begin{textblock}{4}(131.12,94)
+		\begin{textblock}{4}(131.13,94.35)
 			\centering \zubeBoxCheckmark
 		\end{textblock}
 	\else
-		\begin{textblock}{4}(152.12,94)
+		\begin{textblock}{4}(152.13,94.35)
 			\centering \zubeBoxCheckmark
 		\end{textblock}
 	\fi
 
 	\ifzube@befreiungKStGewSt
-		\begin{textblock}{4}(19.6,105.8)
+		\begin{textblock}{4}(19.6,106.12)
 			\centering \zubeBoxCheckmark
 		\end{textblock}
 		\begin{textblock}{155}(28,111)
@@ -216,7 +217,7 @@
 	\fi
 
 	\ifzube@feststellungAO
-		\begin{textblock}{4}(19.6,150.2)
+		\begin{textblock}{4}(19.6,150.55)
 			\centering \zubeBoxCheckmark
 		\end{textblock}
 		\begin{textblock}{39}(28,156.2)
@@ -238,7 +239,7 @@
 	\end{textblock}
 
 	\ifzube@mitgliedsbeitragAbziehbar
-		\begin{textblock}{4}(15.6,219.6)
+		\begin{textblock}{4}(15.63,219.96)
 			\centering \zubeBoxCheckmark
 		\end{textblock}
 	\fi
