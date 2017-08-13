@@ -23,21 +23,21 @@ Installation
 
 This package consists of the following files:
 
-    form034122.pdf    -- original PDF of form 034122 "Bestätigung über
+    fm034122.pdf      -- original PDF of form 034122 "Bestätigung über
                          Sachzuwendung / steuerbegünstigte Einrichtung / Verein"
     README            -- this README
     zube.ins          -- LaTeX installation file for the zube package
     zube.dtx          -- LaTeX code for the zube package
-    zube-example.tex  -- examples for using the zube package
+    zubexmpl.tex      -- examples for using the zube package
 
 You can create `zube.sty` from `zube.dtx` by running
 
     $ latex zube.ins
 
-Then copy `zube.sty` and `form*.pdf` into your TEXMF tree. Refer to the
+Then copy `zube.sty` and `fm*.pdf` into your TEXMF tree. Refer to the
 documentation of your TeX distribution for where this folder is located, and
 whether you need to update any package databases.  On most recent distributions,
-dropping the file into `$HOME/texmf/tex/latex/` should work.
+dropping the files into `$HOME/texmf/tex/latex/` should work.
 
 You can also create the (German) documentation for this package by running
 
@@ -63,10 +63,10 @@ Maintainer of this work is Roland Hieber.
 This work consists of the files `zube.dtx` and `zube.ins`, as well as the
 derived files `zube.sty` and `zube.pdf`.
 
-The examples in `zube-examples.tex` are licensed under CC-0 (Public Domain), see
+The examples in `zubexmpl.tex` are licensed under CC-0 (Public Domain), see
 <https://creativecommons.org/publicdomain/zero/1.0/>.
 
-The forms (`form*.pdf`) provided by the Bundesfinanzverwaltung are Amtliche
+The forms (`fm*.pdf`) provided by the Bundesfinanzverwaltung are Amtliche
 Werke (“official works”) and are therefore not coprightable according to §5
 Urheberrechtsgesetz.  They can be obtained at <https://www.formulare-bfinv.de>,
 path „Steuerformulare“ → „Gemeinnützigkeit“.
