@@ -87,6 +87,9 @@
 \RequirePackage{bbding} % for checkmarks etc.
 \RequirePackage{eurosym}
 
+\RequirePackage{fmtcount} % for numbers-to-words
+\FCloadlang{ngerman}
+
 \RequirePackage{xkeyval}
 \define@cmdkeys{zube}[zube@]{
 	aussteller,
@@ -128,7 +131,7 @@
 \newcommand{\zubeBoxCheckmark}{\XSolid}
 
 \newcommand{\zubeGeldVerein}[3]{
-	\savekeys{zube}{beguenstigteZwecke,finanzamt,stNr}
+	\savekeys{zube}{beguenstigteZwecke,finanzamt,stNr,betragInZiffern}
 	\presetkeys{zube}{
 		ausstellerLogo=,
 		unterschriftNameA=,
@@ -139,6 +142,7 @@
 		mitgliedsbeitragAbziehbar=false,
 		showboxes=false,
 	}{
+		betragInBuchstaben={\numberstringnum{\zube@betragInZiffern}[n]},
 		bkgBeguenstigteZwecke=\usevalue{beguenstigteZwecke},
 		bkgFinanzamt=\usevalue{finanzamt},
 		bkgStNr=\usevalue{stNr},
@@ -148,7 +152,8 @@
 	}
 	\setkeys{zube}{aussteller={#1},zuwendender={#2},#3}
 
-	{ % push font stack
+	\begingroup % push font and babel stack
+	\selectlanguage{ngerman}
 
 	\cleardoublepage
 	\thispagestyle{empty}
@@ -255,7 +260,7 @@
 		\centering \zube@unterschriftNameB
 	\end{textblock}
 
-	} % pop font stack
+	\endgroup % pop font and babel stack
 
 	% cleanup
 	\setlength{\parindent}{\zube@saveindent}
