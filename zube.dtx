@@ -85,6 +85,7 @@
 \RequirePackage[absolute]{textpos}
 \RequirePackage{xcolor}
 \RequirePackage{bbding} % for checkmarks etc.
+\RequirePackage{eurosym}
 
 \RequirePackage{xkeyval}
 \define@cmdkeys{zube}[zube@]{
@@ -123,7 +124,7 @@
 \define@cmdkeys{zube}[zube@]{faoDatum,              }
 
 \newcommand{\zube@selectfont}{\usefont{T1}{ptm}{m}{it}\fontsize{11pt}{12pt}\selectfont}
-
+\newcommand{\zubeEuro}{\geneuronarrow}  % narrow looks better with italic
 \newcommand{\zubeBoxCheckmark}{\XSolid}
 
 \newcommand{\zubeGeldVerein}[3]{
@@ -176,7 +177,7 @@
 	\end{textblock}
 
 	\begin{textblock}{38}(17,80)
-		\centering \zube@betragInZiffern
+		\centering \zube@betragInZiffern\,\zubeEuro
 	\end{textblock}
 	\begin{textblock}{83}(64,80)
 		\centering \zube@betragInBuchstaben
