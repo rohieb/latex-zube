@@ -7,8 +7,9 @@ only available in German.
 *zube*: typesetting of Zuwendungsbestätigungen according to § 10b ESt
 =====================================================================
 
-* Author:  Roland Hieber <rohieb+latex-zube-Ua2thei6@rohieb.name>
+* Author:  Roland Hieber, <rohieb+latex-zube-Ua2thei6@rohieb.name>
 * Version: 0.1 (unrelased)
+* Maintenance Status: actively maintained (as of 2020-01-23)
 
 The *zube* LaTeX package allows you to typeset Zuwendungsbestätigungen (donation
 acknowledgements) according to § 10b ESt (the German income tax law).  It uses
