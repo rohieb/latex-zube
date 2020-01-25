@@ -31,12 +31,17 @@ This package consists of the following files:
 
     fm034122.pdf      -- original PDF of form 034122 "Bestätigung über
                          Sachzuwendung / steuerbegünstigte Einrichtung / Verein"
+    Makefile          -- a GNU Makefile to build everything
     README            -- this README
     zube.ins          -- LaTeX installation file for the zube package
     zube.dtx          -- LaTeX code for the zube package
     zubexmpl.tex      -- examples for using the zube package
 
 You can create `zube.sty` from `zube.dtx` by running
+
+    $ make
+
+or
 
     $ latex zube.ins
 
@@ -46,6 +51,10 @@ whether you need to update any package databases.  On most recent distributions,
 dropping the files into `$HOME/texmf/tex/latex/` should work.
 
 You can also create the (German) documentation for this package by running
+
+    $ make
+
+or
 
     $ pdflatex zube.dtx
 

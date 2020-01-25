@@ -17,7 +17,7 @@ License: public-domain
 	<https://www.formulare-bfinv.de>, path „Formularcenter“ →
 	„Steuerformulare“ → „Gemeinnützigkeit“.
 
-Files: zube.dtx zube.ins zube.sty zube.pdf README.md
+Files: zube.dtx zube.ins zube.sty zube.pdf README.md Makefile
 Copyright: (C) 2017 Roland Hieber <rohieb+latex-zube-Ua2thei6@rohieb.name>
 License: LPPL-1.3c
 	This file may be distributed and/or modified under the conditions of
@@ -34,8 +34,14 @@ License: LPPL-1.3c
 	Maintainer of this work is Roland Hieber.
 	This work is maintained at <https://github.com/rohieb/latex-zube>.
 	.
-	This work consists of the files `README.md`, `zube.dtx` and `zube.ins`,
-	as well as the derived files `zube.sty` and `zube.pdf`.
+	This work consists of the following files:
+	    Makefile
+	    README.md
+	    zube.dtx
+	    zube.ins
+	as well as the following derived files:
+	    zube.sty
+	    zube.pdf
 	.
 	.
 	The LaTeX Project Public License
