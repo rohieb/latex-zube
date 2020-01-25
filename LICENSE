@@ -14,8 +14,8 @@ License: public-domain
 	The tax forms provided by the Bundesfinanzverwaltung are Amtliche Werke
 	(“official works”) in Germany and are therefore not coprightable
 	according to §5 Urheberrechtsgesetz.  They can be obtained at
-	<https://www.formulare-bfinv.de>, path „Steuerformulare“ →
-	„Gemeinnützigkeit“.
+	<https://www.formulare-bfinv.de>, path „Formularcenter“ →
+	„Steuerformulare“ → „Gemeinnützigkeit“.
 
 Files: zube.dtx zube.ins zube.sty zube.pdf README.md
 Copyright: (C) 2017 Roland Hieber <rohieb+latex-zube-Ua2thei6@rohieb.name>

@@ -73,4 +73,5 @@ The examples in `zubexmpl.tex` are licensed under CC-0 (Public Domain), see
 The forms (`fm*.pdf`) provided by the Bundesfinanzverwaltung are Amtliche
 Werke (“official works”) in Germany and are therefore not coprightable
 according to §5 Urheberrechtsgesetz.  They can be obtained at
-<https://www.formulare-bfinv.de>, path „Steuerformulare“ → „Gemeinnützigkeit“.
+<https://www.formulare-bfinv.de>, path „Formularcenter“ → „Steuerformulare“ →
+„Gemeinnützigkeit“.
