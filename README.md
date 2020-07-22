@@ -63,17 +63,4 @@ any later version.  The latest version of this license is available at
 <http://www.latex-project.org/lppl.txt> and version 1.3 or later is part of all
 distributions of LaTeX version 2005/12/01 or later.
 
-This work has the LPPL maintenance status “maintained”, and the Current
-Maintainer of this work is Roland Hieber.
-
-This work consists of the files `README.md`, `zube.dtx` and `zube.ins`, as well
-as the derived files `zube.sty` and `zube.pdf`.
-
-The examples in `zubexmpl.tex` are licensed under CC-0 (Public Domain), see
-<https://creativecommons.org/publicdomain/zero/1.0/>.
-
-The forms (`fm*.pdf`) provided by the Bundesfinanzverwaltung are Amtliche
-Werke (“official works”) in Germany and are therefore not coprightable
-according to §5 Urheberrechtsgesetz.  They can be obtained at
-<https://www.formulare-bfinv.de>, path „Formularcenter“ → „Steuerformulare“ →
-„Gemeinnützigkeit“.
+See the file `LICENSE` in this repository for more information.
