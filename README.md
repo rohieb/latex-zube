@@ -60,6 +60,15 @@ or
 
 The documentation is then accessible in PDF format in the file `zube.pdf`.
 
+For a usage example, see the file zubexmpl.tex.  You can render it into PDF
+form by running
+
+    $ make zubexmpl.pdf
+
+or
+
+    $ pdflatex zubexmpl.tex
+
 
 License
 -------
