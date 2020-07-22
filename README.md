@@ -10,7 +10,7 @@ only available in German.
 =====================================================================
 
 * Author:  Roland Hieber, <rohieb+latex-zube-Ua2thei6@rohieb.name>
-* Version: 0.1 (unrelased)
+* Version: 0.1
 * Maintenance Status: actively maintained (as of 2020-07-23, or the date of the
   latest Git commit, whichever is more recent)
 
