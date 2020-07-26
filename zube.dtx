@@ -97,6 +97,8 @@
 \RequirePackage{fmtcount} % for numbers-to-words
 \FCloadlang{ngerman}
 
+\newlength{\zube@saveindent}
+
 \RequirePackage{xkeyval}
 \define@cmdkeys{zube}[zube@]{
 	aussteller,
@@ -137,17 +139,66 @@
 \newcommand{\zubeEuro}{\geneuronarrow}  % narrow looks better with italic
 \newcommand{\zubeBoxCheckmark}{\XSolid}
 
-\newcommand{\zubeDeGeldVerein}[3]{
-	\savekeys{zube}{beguenstigteZwecke,finanzamt,stNr,betragInZiffern}
+% Set up the page and include a form in the background.
+% Parameter:
+% \begin{enumerate}
+% \item original form filename
+% \end{enumerate}
+\newcommand{\zube@beginform}[1]{
+	\cleardoublepage
+	\thispagestyle{empty}
+	\TPoptions{absolute=true}
+	\TPoptions{absolute=true,showboxes=\ifzube@showboxes true\else false\fi}
+	\textblockrulecolour{red}
+	\textblockorigin{1mm}{1mm}
+	\setlength{\TPHorizModule}{1mm}
+	\setlength{\TPVertModule}{\TPHorizModule}
+
+	\begin{textblock}{1}(0,0)
+		\includepdf[pages=1]{#1}
+	\end{textblock}
+	\setlength{\zube@saveindent}{\parindent}
+	\setlength{\parindent}{0pt}
+
+	\begingroup % push font and babel stack
+	\selectlanguage{ngerman}
+
+	\zube@selectfont
+}
+\newcommand{\zube@endform}{
+	\endgroup % pop font and babel stack
+	% cleanup
+	\setlength{\parindent}{\zube@saveindent}
+	\phantom{some content to get cleardoublepage to work}
+	\cleardoublepage
+}
+\newcommand{\zube@keysetup}{
+	% global keys
+	\savekeys{zube}{beguenstigteZwecke}
+	\savekeys{zube}{betragInZiffern}
+	\savekeys{zube}{finanzamt}
+	\savekeys{zube}{stNr}
+	% shared keys
 	\presetkeys{zube}{
 		ausstellerLogo=,
 		unterschriftNameA=,
 		unterschriftNameB=,
+		showboxes=false,
+	}{}
+}
+%
+% Parameter:
+% \begin{enumerate}
+% \item Aussteller (3 Zeilen)
+% \item Name und Anschrift des Zuwendenden (3 Zeilen)
+% \end{enumerate}
+\newcommand{\zubeDeGeldVerein}[3]{
+	\zube@keysetup
+	\presetkeys{zube}{
 		verzichtVonAufwendungen=false,
 		befreiungKStGewSt=false,
 		feststellungAO=false,
 		mitgliedsbeitragAbziehbar=false,
-		showboxes=false,
 	}{
 		betragInBuchstaben={\numberstringnum{\zube@betragInZiffern}[n]},
 		bkgBeguenstigteZwecke=\usevalue{beguenstigteZwecke},
@@ -159,26 +210,7 @@
 	}
 	\setkeys{zube}{aussteller={#1},zuwendender={#2},#3}
 
-	\begingroup % push font and babel stack
-	\selectlanguage{ngerman}
-
-	\cleardoublepage
-	\thispagestyle{empty}
-	\TPoptions{absolute=true}
-	\TPoptions{absolute=true,showboxes=\ifzube@showboxes true\else false\fi}
-	\textblockrulecolour{red}
-	\textblockorigin{1mm}{1mm}
-	\setlength{\TPHorizModule}{1mm}
-	\setlength{\TPVertModule}{\TPHorizModule}
-	
-	\begin{textblock}{1}(0,0)
-		\includepdf[pages=1]{fm034122.pdf}
-	\end{textblock}
-	\newlength{\zube@saveindent}
-	\setlength{\zube@saveindent}{\parindent}
-	\setlength{\parindent}{0pt}
-	
-	\zube@selectfont
+	\zube@beginform{fm034122.pdf}
 	
 	\begin{textblock}{174}(17,18)
 		\zube@aussteller
@@ -267,12 +299,7 @@
 		\centering \zube@unterschriftNameB
 	\end{textblock}
 
-	\endgroup % pop font and babel stack
-
-	% cleanup
-	\setlength{\parindent}{\zube@saveindent}
-	\phantom{some content to get cleardoublepage to work}
-	\cleardoublepage
+	\zube@endform
 }
 %    \end{macrocode}
 % \Finale
