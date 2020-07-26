@@ -30,8 +30,7 @@ Installation
 
 This package consists of the following files:
 
-    fm034122.pdf      -- original PDF of form 034122 "Bestätigung über
-                         Sachzuwendung / steuerbegünstigte Einrichtung / Verein"
+    fm03412*.pdf      -- original PDF of German Zuwendungsbestätigungen
     Makefile          -- a GNU Makefile to build everything
     README            -- this README
     zube.ins          -- LaTeX installation file for the zube package
