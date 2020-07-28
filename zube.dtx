@@ -106,6 +106,7 @@
 	zuwendender,
 	betragInZiffern,
 	betragInBuchstaben,
+	bezeichnungSachzuwendung,
 	datumZuwendung,
 	beguenstigteZwecke,
 	finanzamt,
@@ -120,6 +121,10 @@
 	befreiungKStGewSt,
 	feststellungAO,
 	mitgliedsbeitragAbziehbar,
+	ausBetriebsvermoegen,
+	ausPrivatvermoegen,
+	herkunftUnbekannt,
+	unterlagenVerfuegbar,
 	showboxes,
 }{}
 % Abschnitt Befreiung von Körperschafts- und Gewerbesteuer
@@ -211,7 +216,7 @@
 	\setkeys{zube}{aussteller={#1},zuwendender={#2},#3}
 
 	\zube@beginform{fm034122.pdf}
-	
+
 	\begin{textblock}{174}(17,18)
 		\zube@aussteller
 	\end{textblock}
@@ -302,6 +307,126 @@
 	\zube@endform
 }
 %    \end{macrocode}
+%
+% \begin{macrocode}
+\newcommand{\zubeDeSachVerein}[3]{
+	\zube@keysetup
+	\presetkeys{zube}{
+		befreiungKStGewSt=false,
+		feststellungAO=false,
+	}{
+		betragInBuchstaben={\numberstringnum{\zube@betragInZiffern}[n]},
+		bkgBeguenstigteZwecke=\usevalue{beguenstigteZwecke},
+		bkgFinanzamt=\usevalue{finanzamt},
+		bkgStNr=\usevalue{stNr},
+		faoBeguenstigteZwecke=\usevalue{beguenstigteZwecke},
+		faoFinanzamt=\usevalue{finanzamt},
+		faoStNr=\usevalue{stNr},
+	}
+	\setkeys{zube}{aussteller={#1},zuwendender={#2},#3}
+
+	\zube@beginform{fm034123.pdf}
+	
+	\begin{textblock}{174}(17,17)
+		\zube@aussteller
+	\end{textblock}
+
+	\begin{textblock}{174}(17,52)
+		\zube@zuwendender
+	\end{textblock}
+
+	\begin{textblock}{38}(17,71)
+		\centering \zube@betragInZiffern\,\zubeEuro
+	\end{textblock}
+	\begin{textblock}{83}(64,71)
+		\centering \zube@betragInBuchstaben
+	\end{textblock}
+	\begin{textblock}{38}(154,71)
+		\centering \zube@datumZuwendung
+	\end{textblock}
+
+	\begin{textblock}{174}(17,84)
+		\zube@bezeichnungSachzuwendung
+	\end{textblock}
+
+	\ifzube@ausBetriebsvermoegen
+		\begin{textblock}{4}(19.6,132.7)
+			\centering \zubeBoxCheckmark
+		\end{textblock}
+	\fi
+	\ifzube@ausPrivatvermoegen
+		\begin{textblock}{4}(19.6,138.9)
+			\centering \zubeBoxCheckmark
+		\end{textblock}
+	\fi
+	\ifzube@herkunftUnbekannt
+		\begin{textblock}{4}(19.6,144.4)
+			\centering \zubeBoxCheckmark
+		\end{textblock}
+	\fi
+
+	\ifzube@unterlagenVerfuegbar
+		\begin{textblock}{4}(19.6,149.6)
+			\centering \zubeBoxCheckmark
+		\end{textblock}
+	\fi
+
+	\ifzube@befreiungKStGewSt
+		\begin{textblock}{4}(19.6,154.7)
+			\centering \zubeBoxCheckmark
+		\end{textblock}
+		\begin{textblock}{155}(28,159)
+			\zube@bkgBeguenstigteZwecke
+		\end{textblock}
+		\begin{textblock}{50}(28,178.5)
+			\zube@bkgFinanzamt
+		\end{textblock}
+		\begin{textblock}{36}(88,178.5)
+			\centering \zube@bkgStNr
+		\end{textblock}
+		\begin{textblock}{24}(135,178.5)
+			\centering \zube@bkgDatum
+		\end{textblock}
+		\begin{textblock}{40}(57.5,183)
+			\centering \zube@bkgVeranlagungszeitraum
+		\end{textblock}
+	\fi
+
+	\ifzube@feststellungAO
+		\begin{textblock}{4}(19.6,192.6)
+			\centering \zubeBoxCheckmark
+		\end{textblock}
+		\begin{textblock}{50}(28,198)
+			\zube@faoFinanzamt
+		\end{textblock}
+		\begin{textblock}{36}(88,198)
+			\centering \zube@faoStNr
+		\end{textblock}
+		\begin{textblock}{24}(149,198)
+			\centering \zube@faoDatum
+		\end{textblock}
+		\begin{textblock}{155}(28,207)
+			\zube@faoBeguenstigteZwecke
+		\end{textblock}
+	\fi
+
+	\begin{textblock}{170}(17,225.5)
+		\zube@beguenstigteZwecke
+	\end{textblock}
+
+	\begin{textblock}{70}(15,247.5)
+		\zube@unterschriftOrt, \zube@unterschriftDatum
+	\end{textblock}
+	\begin{textblock}{50}(91,251.2)
+		\centering \zube@unterschriftNameA
+	\end{textblock}
+	\begin{textblock}{50}(144,251.2)
+		\centering \zube@unterschriftNameB
+	\end{textblock}
+
+	\zube@endform
+}
+% \end{macrocode}
 % \Finale
 \makeatother
 \endinput
